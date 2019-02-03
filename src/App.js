@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/header'
+import Print from './components/print'
 import FullName from './components/fullName'
 import Profil from './components/profil'
 import Skills from './components/skills'
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
+        <Print />
         <FullName firstName={firstName} lastName={lastName} />
         <Profil status={status} experience={experience} />
         <Skills skills={skills} />
