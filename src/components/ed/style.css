@@ -1,0 +1,7 @@
+.education-list>li>span {
+    color: grey;
+}
+
+.education-list>li {
+    list-style-type: none;
+}
