@@ -1,0 +1,34 @@
+.half-page-left {
+    width: 50%;
+    position: absolute;
+    overflow: auto;
+    height: 98vh;
+}
+
+.half-page-right {
+    width: 50%;
+    float: right;
+    overflow: auto;
+    height: 98vh;
+}
+
+.Container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #section-to-print, #section-to-print * {
+        visibility: visible;
+    }
+    #section-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 90%;
+    }
+}

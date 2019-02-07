@@ -1,3 +1,7 @@
 .skills-list>li>span {
     color: grey;
 }
+
+.padding-top-skils {
+    padding-top: 15%;
+}

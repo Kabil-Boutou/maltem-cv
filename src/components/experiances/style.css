@@ -1,0 +1,8 @@
+.experience-list>li>span {
+    color: grey;
+}
+
+.experience-list>li {
+    list-style-type: none;
+    margin-bottom: 3%;
+}

@@ -4,4 +4,13 @@
 
 .education-list>li {
     list-style-type: none;
+    margin-bottom: 3%;
+}
+
+.spacing-text-details {
+    padding: 2%;
+}
+
+p.max-text-width {
+    max-width: 150px;
 }

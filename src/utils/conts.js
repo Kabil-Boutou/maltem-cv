@@ -13,5 +13,18 @@ module.exports = {
   experience: 2,
   firstName: 'Fake',
   lastName: 'News',
-  educations: { '2018 :': 'Autre ...', '2015 :': 'Master ...', '2010 :': 'Bac ...' }
+  educations: { '2018 :': 'Autre ...', '2015 :': 'Master ...', '2010 :': 'Bac ...' },
+  LANGUAGE: 'language',
+  LANGUAGE_LVL: 'langLvl',
+  ED_DETAILS: 'edDetails',
+  EDUCATION: 'education',
+  SKILL_DETAILS: 'skillDetails',
+  SKILLS: 'skills',
+  EXPERIANCE: 'experiance',
+  ENTREPRISE: 'entreprise',
+  FONCTION: 'fonction',
+  MISSION: 'mission',
+  DESCRIPTION_MISSION: 'description',
+  TACHE_MISSION: 'tache',
+  ENV_TECHNIQUE: 'environnement_technique'
 }
