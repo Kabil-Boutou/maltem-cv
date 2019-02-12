@@ -25,7 +25,6 @@ const experience = props => {
           if (exp.includes(EXPERIANCE)) {
             experianceID++
             let missions = props.experiences[MISSONS_COUNT + experianceID]
-
             return (
               <li key={exp}>
                 <span>{props.experiences[EXPERIANCE + experianceID]}</span>
@@ -35,15 +34,22 @@ const experience = props => {
                 {missions
                   ? [...new Array(missions++)].map(mission => {
                       missionID++
-                      // let taches = props.experiences[TACHES_COUNT + experianceID + missionID]
+                      let taches = props.experiences[TACHES_COUNT + experianceID + missionID]
                       return (
                         <React.Fragment key={missionID}>
                           <span>{props.experiences[MISSION + experianceID + missionID]}</span>
+                          <br />
                           <span>{props.experiences[DESCRIPTION_MISSION + experianceID + missionID]}</span>
-                          {/* [...new Array(taches++)].map(tache => {
-                            tachID++
-                            return <span>{props.experiences[TACHE_MISSION + experianceID + missionID + tachID]}</span>
-                          }) */}
+                          <br />
+                          {taches &&
+                            [...new Array(taches++)].map(tache => {
+                              tachID++
+                              return (
+                                <span key={tachID}>
+                                  {props.experiences[TACHE_MISSION + experianceID + missionID + tachID]}
+                                </span>
+                              )
+                            })}
                         </React.Fragment>
                       )
                     })

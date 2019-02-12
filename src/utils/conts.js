@@ -8,7 +8,7 @@ module.exports = {
     'Méthodes :': ' Agile Scrum, ...',
     'Secteurs Métiers:': ' Assurances, Tourisme, Banque ...'
   },
-  status: 'Consultant Etudes & Développement [Web /Mobile/ et/ou Techno principale]',
+  job: 'Consultant Etudes & Développement Web',
   languages: ['Français', 'Anglais', 'Arabe'],
   experience: 2,
   name: 'FirstName LastName',

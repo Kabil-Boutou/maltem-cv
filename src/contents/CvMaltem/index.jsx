@@ -6,7 +6,7 @@ import Skills from '../../components/skills'
 import Education from '../../components/ed'
 import Language from '../../components/language'
 import Experience from '../../components/experiances'
-import { name, tools, technologies } from '../../utils/conts'
+import { name, tools, technologies, experience, job } from '../../utils/conts'
 import './style.css'
 
 const CvMaltem = ({ data }) => {
@@ -20,7 +20,7 @@ const CvMaltem = ({ data }) => {
             {data.presInfo && (
               <>
                 <FullName name={name} />
-                <Profil status={data.presInfo.presonalInfoStatus} experience={data.presInfo.presonalInfoExperience} />
+                <Profil status={job} experience={experience} />
               </>
             )}
             {data.skills && <Skills skills={{ tools, technologies }} />}

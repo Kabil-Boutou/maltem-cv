@@ -118,8 +118,8 @@ export const Experiences = ({ experiencesState, experiencesStateValue }) => {
           placeholder='Description...'
           label='Description :'
         />
-        {experiencesStateValue && parseInt(experiencesStateValue[`${TACHE_MISSION}${experianceID}${missionID}`])
-          ? handleTaches(parseInt(experiencesStateValue[`${TACHE_MISSION}${experianceID}${missionID}`]))
+        {experiencesStateValue && parseInt(experiencesStateValue[`${TACHES_COUNT}${experianceID}${missionID}`])
+          ? handleTaches(parseInt(experiencesStateValue[`${TACHES_COUNT}${experianceID}${missionID}`]))
           : handleTaches(1)}
         <Input
           name={`${TACHES_COUNT}${experianceID}${missionID}`}
