@@ -11,8 +11,9 @@ module.exports = {
   status: 'Consultant Etudes & Développement [Web /Mobile/ et/ou Techno principale]',
   languages: ['Français', 'Anglais', 'Arabe'],
   experience: 2,
-  firstName: 'Fake',
-  lastName: 'News',
+  name: 'FirstName LastName',
+  tools: ['objective', 'c', 'php', 'java', 'photoshop', '3d'],
+  technologies: ['mobile', 'data', 'ios', 'android', 'dveloppement'],
   educations: { '2018 :': 'Autre ...', '2015 :': 'Master ...', '2010 :': 'Bac ...' },
   LANGUAGE: 'language',
   LANGUAGE_LVL: 'langLvl',
@@ -24,7 +25,9 @@ module.exports = {
   ENTREPRISE: 'entreprise',
   FONCTION: 'fonction',
   MISSION: 'mission',
+  MISSONS_COUNT: 'missions_count',
   DESCRIPTION_MISSION: 'description',
   TACHE_MISSION: 'tache',
+  TACHES_COUNT: 'taches_count',
   ENV_TECHNIQUE: 'environnement_technique'
 }

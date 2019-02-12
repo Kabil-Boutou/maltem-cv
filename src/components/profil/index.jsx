@@ -1,10 +1,15 @@
 import React from 'react'
+import Text from '../Text'
 import './style.css'
 
 const profil = props => (
   <div className='profil'>
-    <h2 className='profil-status'>{props.status}</h2>
-    <h2 className='profil-experience'>{props.experience} années d’expérience</h2>
+    <Text size='24' font='Corbel' float='left' color='#af312a'>
+      {props.status}
+    </Text>
+    <Text size='24' font='Corbel' float='right'>
+      {props.experience} années d’expérience
+    </Text>
   </div>
 )
 export default profil

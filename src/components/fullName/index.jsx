@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Text from '../Text'
 const fullName = props => (
-  <h2>
-    {props.firstName} {props.lastName}
-  </h2>
+  <Text font='Calibri' size='24'>
+    {props.name}
+  </Text>
 )
 export default fullName

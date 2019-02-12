@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 const Label = styled.label`
   color: grey;
 `
-const inputEl = ({ setData, label, placeholder, type, name }) => (
+const inputEl = ({ setData, label, placeholder, type, name, min, max }) => (
   <Wrapper>
     <Label>{label} </Label>
     <Input
@@ -22,6 +22,8 @@ const inputEl = ({ setData, label, placeholder, type, name }) => (
       name={name}
       type={type}
       onChange={e => setData({ [e.target.name]: e.target.value })}
+      min={min}
+      max={max}
     />
   </Wrapper>
 )

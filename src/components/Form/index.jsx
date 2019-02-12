@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Paper from '../paper'
 import Button from '../button'
 import Input from '../input'
@@ -16,8 +16,10 @@ import {
   FONCTION,
   ENV_TECHNIQUE,
   MISSION,
+  MISSONS_COUNT,
   DESCRIPTION_MISSION,
-  TACHE_MISSION
+  TACHE_MISSION,
+  TACHES_COUNT
 } from '../../utils/conts'
 export const PersonalInfo = ({ personalInfoState }) => (
   <Paper>
@@ -95,19 +97,55 @@ export const Languages = ({ languagesState }) => {
     </Paper>
   )
 }
-export const Experiences = ({ experiencesState }) => {
+
+export const Experiences = ({ experiencesState, experiencesStateValue }) => {
   const [experience, setExperience] = useState(1)
-  const [tache, setTache] = useState(1)
-  const [mission, setMission] = useState(1)
-  useEffect(() => {
-    experiencesState({
-      ['tachesMissionExperiance' + experience + mission]: tache - 1,
-      ['missionsExperiance' + experience]: mission - 1
-    })
-  }, [])
   let experianceID = 0,
     missionID = 0,
     tachID = 0
+  const handleMission = missions => {
+    return [...new Array(missions)].map(mission => (
+      <React.Fragment key={missionID++}>
+        <Input
+          name={`${MISSION}${experianceID}${missionID}`}
+          setData={experiencesState}
+          placeholder='Mission ...'
+          label='Mission :'
+        />
+        <Textarea
+          name={`${DESCRIPTION_MISSION}${experianceID}${missionID}`}
+          setData={experiencesState}
+          placeholder='Description...'
+          label='Description :'
+        />
+        {experiencesStateValue && parseInt(experiencesStateValue[`${TACHE_MISSION}${experianceID}${missionID}`])
+          ? handleTaches(parseInt(experiencesStateValue[`${TACHE_MISSION}${experianceID}${missionID}`]))
+          : handleTaches(1)}
+        <Input
+          name={`${TACHES_COUNT}${experianceID}${missionID}`}
+          setData={experiencesState}
+          placeholder='Nombre de taches par mission...'
+          label='Nombre de taches'
+          type='number'
+          min='1'
+          max='10'
+        />
+      </React.Fragment>
+    ))
+  }
+  const handleTaches = taches => {
+    return [...new Array(taches)].map(tache => (
+      <React.Fragment key={tachID++}>
+        <Input
+          name={`${TACHE_MISSION}${experianceID}${missionID}${tachID}`}
+          setData={experiencesState}
+          placeholder='Taches ...'
+          label='Tache :'
+        />
+      </React.Fragment>
+    ))
+  }
+
   return (
     <Paper>
       {[...new Array(experience)].map(exp => (
@@ -133,34 +171,18 @@ export const Experiences = ({ experiencesState }) => {
               placeholder='Fonctions ...'
               label='Fonction :'
             />
-            {[...new Array(mission)].map(mission => (
-              <React.Fragment key={missionID++}>
-                <Input
-                  name={`${MISSION}${experianceID}${missionID}`}
-                  setData={experiencesState}
-                  placeholder='Mission ...'
-                  label='Mission :'
-                />
-                <Textarea
-                  name={`${DESCRIPTION_MISSION}${experianceID}${missionID}`}
-                  setData={experiencesState}
-                  placeholder='Description...'
-                  label='Description :'
-                />
-                {[...new Array(tache)].map(tache => (
-                  <React.Fragment key={tachID++}>
-                    <Input
-                      name={`${TACHE_MISSION}${experianceID}${missionID}${tachID}`}
-                      setData={experiencesState}
-                      placeholder='Taches ...'
-                      label='Tache :'
-                    />
-                  </React.Fragment>
-                ))}
-                <Button action={() => setTache(tache + 1)} value='Ajouter une nouvelle tache' size='50%' />
-              </React.Fragment>
-            ))}
-            <Button action={() => setMission(mission + 1)} value='Ajouter une nouvelle mission' size='50%' />
+            {experiencesStateValue && parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`])
+              ? handleMission(parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`]))
+              : handleMission(1)}
+            <Input
+              name={`${MISSONS_COUNT}${experianceID}`}
+              setData={experiencesState}
+              placeholder='Nombre de Mission ...'
+              label='Nombre de Mission'
+              type='number'
+              min='1'
+              max='10'
+            />
             <Textarea
               name={`${ENV_TECHNIQUE}${experianceID}`}
               setData={experiencesState}

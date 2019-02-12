@@ -22,13 +22,27 @@
     body * {
         visibility: hidden;
     }
-    #section-to-print, #section-to-print * {
+    #section-to-print1, #section-to-print1 * {
         visibility: visible;
     }
-    #section-to-print {
+    #section-to-print1 {
         position: absolute;
         left: 0;
         top: 0;
         width: 90%;
     }
+    #section-to-print2, #section-to-print2 * {
+        visibility: visible;
+    }
+    #section-to-print2 {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 90%;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 0mm;
 }

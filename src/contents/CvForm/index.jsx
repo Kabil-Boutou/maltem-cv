@@ -17,7 +17,10 @@ const Forms = props => {
         <Skills skillsState={newState => setSkills({ ...skills, ...newState })} />
         <Etudcation educationState={newState => setEducations({ ...educations, ...newState })} />
         <Languages languagesState={newState => setLanguages({ ...languages, ...newState })} />
-        <Experiences experiencesState={newState => setExperiences({ ...experiences, ...newState })} />
+        <Experiences
+          experiencesState={newState => setExperiences({ ...experiences, ...newState })}
+          experiencesStateValue={experiences}
+        />
       </div>
       <div className='half-page-right'>
         <button onClick={() => window.print()}>print</button>
