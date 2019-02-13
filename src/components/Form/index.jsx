@@ -23,8 +23,7 @@ import {
 } from '../../utils/conts'
 export const PersonalInfo = ({ personalInfoState }) => (
   <Paper>
-    <Input placeholder='Nom...' name='presonalInfoNom' label='Nom :' setData={personalInfoState} />
-    <Input placeholder='Prenom...' name='presonalInfoPrenom' label='Prenom :' setData={personalInfoState} />
+    <Input placeholder='Nom...' name='presonalInfoName' label='Nom :' setData={personalInfoState} />
     <Input placeholder='Status...' name='presonalInfoStatus' label='Status :' setData={personalInfoState} />
     <Input
       placeholder="Année d'experiance..."
@@ -118,9 +117,9 @@ export const Experiences = ({ experiencesState, experiencesStateValue }) => {
           placeholder='Description...'
           label='Description :'
         />
-        {experiencesStateValue && parseInt(experiencesStateValue[`${TACHES_COUNT}${experianceID}${missionID}`])
-          ? handleTaches(parseInt(experiencesStateValue[`${TACHES_COUNT}${experianceID}${missionID}`]))
-          : handleTaches(1)}
+        {experiencesStateValue &&
+          experiencesStateValue[`${TACHES_COUNT}${experianceID}${missionID}`] &&
+          handleTaches(parseInt(experiencesStateValue[`${TACHES_COUNT}${experianceID}${missionID}`]))}
         <Input
           name={`${TACHES_COUNT}${experianceID}${missionID}`}
           setData={experiencesState}
@@ -171,9 +170,9 @@ export const Experiences = ({ experiencesState, experiencesStateValue }) => {
               placeholder='Fonctions ...'
               label='Fonction :'
             />
-            {experiencesStateValue && parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`])
-              ? handleMission(parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`]))
-              : handleMission(1)}
+            {experiencesStateValue &&
+              parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`]) &&
+              handleMission(parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`]))}
             <Input
               name={`${MISSONS_COUNT}${experianceID}`}
               setData={experiencesState}

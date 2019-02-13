@@ -1,8 +1,18 @@
-.experience-list>li>span {
+.experience-list>li>span:first-child {
     color: grey;
 }
 
 .experience-list>li {
     list-style-type: none;
     margin-bottom: 3%;
+}
+
+.experiences_date {
+    float: left;
+}
+
+.experiences_details {
+    width: 500px;
+    float: right;
+    display: grid;
 }
