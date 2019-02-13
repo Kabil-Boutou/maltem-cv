@@ -1,7 +1,3 @@
-.experience-list>li>span:first-child {
-    color: grey;
-}
-
 .experience-list>li {
     list-style-type: none;
     margin-bottom: 3%;
@@ -9,10 +5,32 @@
 
 .experiences_date {
     float: left;
+    color: grey;
+    font-weight: bold;
 }
 
 .experiences_details {
     width: 500px;
     float: right;
     display: grid;
+}
+
+.text_bold {
+    font-weight: bold;
+}
+
+.text_italic {
+    font-style: italic;
+}
+
+.experiences_entreprise {
+    font-weight: bold;
+}
+
+.experiences_fonction {
+    font-weight: bold;
+}
+
+.experience_mission_taches {
+    color: grey;
 }

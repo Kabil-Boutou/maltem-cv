@@ -171,7 +171,7 @@ export const Experiences = ({ experiencesState, experiencesStateValue }) => {
               label='Fonction :'
             />
             {experiencesStateValue &&
-              parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`]) &&
+              experiencesStateValue[`${MISSONS_COUNT}${experianceID}`] &&
               handleMission(parseInt(experiencesStateValue[`${MISSONS_COUNT}${experianceID}`]))}
             <Input
               name={`${MISSONS_COUNT}${experianceID}`}

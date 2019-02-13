@@ -31,31 +31,40 @@ const experience = props => {
                   <span>{props.experiences[EXPERIANCE + experianceID]}</span>
                 </div>
                 <div className='experiences_details'>
-                  <span>{props.experiences[ENTREPRISE + experianceID]}</span>
-                  <span>{props.experiences[FONCTION + experianceID]}</span>
+                  <span className='experiences_entreprise text_bold'>
+                    {props.experiences[ENTREPRISE + experianceID]}
+                  </span>
+                  <span className='experiences_fonction text_bold'>{props.experiences[FONCTION + experianceID]}</span>
+                  <br />
                   {missions
                     ? [...new Array(missions++)].map(mission => {
                         missionID++
                         let taches = props.experiences[TACHES_COUNT + experianceID + missionID]
                         return (
                           <React.Fragment key={missionID}>
-                            <span>{props.experiences[MISSION + experianceID + missionID]}</span>
-                            <span>{props.experiences[DESCRIPTION_MISSION + experianceID + missionID]}</span>
-                            {taches &&
-                              [...new Array(taches++)].map(tache => {
-                                tachID++
-                                return (
-                                  <span key={tachID}>
-                                    {props.experiences[TACHE_MISSION + experianceID + missionID + tachID]}
-                                  </span>
-                                )
-                              })}
+                            <span className='text_bold'>{props.experiences[MISSION + experianceID + missionID]}</span>
+                            <span className='text_italic'>
+                              {props.experiences[DESCRIPTION_MISSION + experianceID + missionID]}
+                            </span>
+                            <ul>
+                              {taches &&
+                                [...new Array(taches++)].map(tache => {
+                                  tachID++
+                                  return (
+                                    <li className='experience_mission_taches' key={tachID}>
+                                      {props.experiences[TACHE_MISSION + experianceID + missionID + tachID]}
+                                    </li>
+                                  )
+                                })}
+                            </ul>
                           </React.Fragment>
                         )
                       })
                     : null}
 
-                  <span>{props.experiences[ENV_TECHNIQUE + experianceID]}</span>
+                  <span className='text_bold'>
+                    Environnement technique : {props.experiences[ENV_TECHNIQUE + experianceID]}
+                  </span>
                 </div>
               </li>
             )

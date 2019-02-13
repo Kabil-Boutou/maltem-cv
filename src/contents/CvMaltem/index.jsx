@@ -6,7 +6,6 @@ import Skills from '../../components/skills'
 import Education from '../../components/ed'
 import Language from '../../components/language'
 import Experience from '../../components/experiances'
-import { tools, technologies } from '../../utils/conts'
 import './style.css'
 
 const CvMaltem = ({ data }) => {
@@ -23,13 +22,12 @@ const CvMaltem = ({ data }) => {
                 <Profil status={data.presInfo.presonalInfoStatus} experience={data.presInfo.presonalInfoExperience} />
               </>
             )}
-            {data.skills && <Skills skills={{ tools, technologies }} />}
+            {data.skills && <Skills skills={data.skills} />}
+            {data.educations && <Education educations={data.educations} />}
+            {data.languages && <Language languages={data.languages} />}
           </div>
           <div className='cv-wrapper' id='section-to-print2'>
             <Header />
-
-            {data.educations && <Education educations={data.educations} />}
-            {data.languages && <Language languages={data.languages} />}
             {data.experiences && <Experience experiences={data.experiences} />}
           </div>
         </>
